@@ -1,201 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shilpa Sanivarapu | Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: linear-gradient(135deg, #fdeef2, #fffafc);
-      color: #3a2a2a;
-    }
-
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: #b56576;
-      transition: transform 0.3s ease;
-    }
-
-    h1:hover {
-      transform: scale(1.05);
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      color: #6d4c4c;
-      margin-top: 0.5rem;
-    }
-
-    p {
-      margin-top: 1rem;
-      max-width: 500px;
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-left: auto;
-      margin-right: auto;
-      color: #4e3b3b;
-    }
-
-    .buttons {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    a {
-      text-decoration: none;
-      color: #fff;
-      background: #b56576;
-      padding: 10px 25px;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(181, 101, 118, 0.2);
-    }
-
-    a:hover {
-      background: #c67d8a;
-      transform: scale(1.1);
-      box-shadow: 0 6px 14px rgba(181, 101, 118, 0.4);
-    }
-
-    section {
-      padding: 60px 20px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .card {
-      background-color: #fff;
-      border-radius: 20px;
-      width: 80%;
-      max-width: 800px;
-      min-height: 200px;
-      padding: 40px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    }
-
-    section + section {
-      margin-top: 80px; 
-    }
-
-    h3 {
-      font-size: 1.6rem;
-      color: #b56576;
-      margin-bottom: 15px;
-    }
-
-    .card p {
-      color: #5a4444;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px;
-      font-size: 0.9rem;
-      color: #6d4c4c;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shilpa Sanivarapu</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="hero">
-    <h1>Shilpa Sanivarapu</h1>
-    <h2>Tech-Driven Creative | AI Enthusiast | Product Marketing Learner</h2>
-    <p>
-      I’m a B.Tech AI student passionate about blending technology with creativity.
-      I explore how innovation, design, and human emotion connect — whether through
-      marketing, data, or storytelling.
-    </p>
-    <div class="buttons">
-      <a href="#about">View My Work</a>
-      <a href="about.html">About Me</a>
-    </div>
-  </div>
+<nav class="site-nav">
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="yoga.html">Yoga</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <section id="about">
-    <div class="card">
-      <h3>About Me</h3>
-      <p>This section will tell your story — your background, interests, and what drives your passion for tech and creativity 💫</p>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="card">
-      <h3>Projects</h3>
-      <p>AI, NLP, and full-stack projects like Emotion Detection and Home Bites 🍽️</p>
-    </div>
-  </section>
-
-<section id="contact">
-  <div class="card">
-    <h3>Contact</h3>
-    <p>Let’s connect! Feel free to reach out!</p>
-    
-    <div style="display:flex; flex-direction:column; align-items:center; gap:12px; margin-top:15px;">
-      <a href="mailto:csbhavana@icloud.com"
-         style="color:#b56576;
-                background:#fff;
-                border:1px solid #f3c7d1;
-                text-decoration:none;
-                font-weight:500;
-                padding:10px 20px;
-                border-radius:25px;
-                width: fit-content;
-                transition:all 0.3s ease;
-                box-shadow:0 2px 6px rgba(0,0,0,0.05);">
-        mail: csbhavana@icloud.com
-      </a>
-
-      <a href="https://www.linkedin.com/in/shilpa-sanivarapu/"
-         target="_blank"
-         style="color:#b56576;
-                background:#fff;
-                border:1px solid #f3c7d1;
-                text-decoration:none;
-                font-weight:500;
-                padding:10px 20px;
-                border-radius:25px;
-                width: fit-content;
-                transition:all 0.3s ease;
-                box-shadow:0 2px 6px rgba(0,0,0,0.05);">
-        LinkedIn
-      </a>
-    </div>
+<section class="hero">
+  <h1>Shilpa Sanivarapu</h1>
+  <p class="tagline">Tech-Driven Creative | AI Enthusiast | Product Marketing Learner</p>
+  <p>I'm a B.Tech AI student passionate about blending technology with creativity. I explore how innovation, design, and human emotion connect — whether through marketing, data, or storytelling.</p>
+  <div class="btn-row">
+    <a href="projects.html" class="btn">View My Work</a>
+    <a href="about.html" class="btn btn-outline">About Me</a>
   </div>
 </section>
 
+<div class="section-wrap">
 
-  <footer>
-    © 2025 Shilpa Sanivarapu. All rights reserved.
-  </footer>
+  <a href="about.html" class="card">
+    <h2>About Me</h2>
+    <p class="teaser">AI student, NGO leader, and yoga instructor — from managing social media to coordinating sustainability initiatives, here's the story behind the work 💫</p>
+  </a>
+
+  <a href="projects.html" class="card">
+    <h2>Projects</h2>
+    <p class="teaser">AI, NLP, computer vision, and full-stack projects — from emotion detection to drug compatibility modeling 🧪</p>
+  </a>
+
+  <a href="yoga.html" class="card">
+    <h2>Yoga &amp; Wellness</h2>
+    <p class="teaser">Certified yoga instructor sharing practice, presence, and a little balance amid the tech 🧘‍♀️</p>
+  </a>
+
+  <a href="contact.html" class="card">
+    <h2>Contact</h2>
+    <p class="teaser">Let's connect! Feel free to reach out!</p>
+  </a>
+
+</div>
 
 </body>
 </html>
