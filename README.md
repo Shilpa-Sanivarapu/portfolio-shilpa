@@ -8,7 +8,6 @@ My personal portfolio website, built with HTML, CSS, and JavaScript.
 - **Home** — intro and quick links
 - **About** — my background, NGO leadership, and interests
 - **Projects** — AI/ML, image processing, and full-stack projects
-- **Yoga** — my work as a certified yoga instructor
 - **Contact** — ways to reach me
 
 ## Built with
