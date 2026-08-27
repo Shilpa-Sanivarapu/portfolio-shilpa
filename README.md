@@ -2,7 +2,7 @@
 
 My personal portfolio website, built with HTML, CSS, and JavaScript.
 
- **Live site:** https://shilpa-sanivarapu.github.io/portfolio-shilpa/index.html
+ **Live site:** https://portfolio-shilpa.vercel.app/index.html
 
 ## What's here
 - **Home** — intro and quick links
