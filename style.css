@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #8A9A5B;
+  --bg: #9CAF88;            /* sage green */
   --card-bg: #ffffff;
-  --border: #f0e6e9;
+  --box-bg: #ffffff;        /* inner boxes: white for now */
+  --border: #e4e8dc;
   --accent: #7c5c8c;
   --accent-dark: #614470;
   --accent-soft: #f4eef7;
   --heading: #3a3437;
   --text-dark: #4a4144;
-  --text-body: #6b6266;
-  --shadow: 0 16px 32px -18px rgba(60, 50, 55, 0.18);
+  --text-body: #5a5256;
+  --shadow: 0 16px 32px -18px rgba(40, 50, 35, 0.3);
+
+  /* Homepage heading size (only used by .hero h1). Change this one line to resize it. */
+  --hero-title-size: clamp(4rem, 20vw, 20rem);
 }
 
 * {
@@ -21,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 body {
@@ -52,7 +57,7 @@ a { text-decoration: none; color: inherit; }
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 0.92rem;
-  color: var(--text-body);
+  color: var(--heading);
   padding: 8px 18px;
   border-radius: 999px;
   transition: background 0.2s ease, color 0.2s ease;
@@ -60,29 +65,31 @@ a { text-decoration: none; color: inherit; }
 
 .site-nav a:hover,
 .site-nav a.active {
-  background: var(--accent-soft);
+  background: #ffffff;
   color: var(--accent);
 }
 
 /* Hero */
 .hero {
   text-align: center;
-  padding: 100px 24px 80px;
-  max-width: 760px;
+  padding: 80px 24px 80px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .hero h1 {
-  font-size: 3.2rem;
-  letter-spacing: -0.5px;
-  margin-bottom: 14px;
-  color: var(--accent);
+  font-size: var(--hero-title-size);   /* the big one, homepage only */
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: var(--accent-dark);
+  overflow-wrap: anywhere;
 }
 
 .hero .tagline {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--heading);
   font-size: 1.1rem;
   margin-bottom: 22px;
 }
@@ -90,8 +97,9 @@ a { text-decoration: none; color: inherit; }
 .hero p {
   font-size: 1.02rem;
   line-height: 1.7;
-  color: var(--text-body);
-  margin-bottom: 36px;
+  color: var(--heading);
+  max-width: 680px;
+  margin: 0 auto 36px;
 }
 
 .btn-row {
@@ -123,13 +131,13 @@ a { text-decoration: none; color: inherit; }
 
 .btn-outline {
   background: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
+  color: var(--accent-dark);
+  border: 2px solid var(--accent-dark);
   box-shadow: none;
 }
 
 .btn-outline:hover {
-  background: var(--accent);
+  background: var(--accent-dark);
   color: #fff;
 }
 
@@ -155,7 +163,7 @@ a { text-decoration: none; color: inherit; }
 
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 36px -18px rgba(60, 50, 55, 0.22);
+  box-shadow: 0 20px 36px -18px rgba(40, 50, 35, 0.38);
 }
 
 .card h2 { font-size: 1.9rem; margin-bottom: 12px; }
@@ -208,7 +216,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .grid-item {
-  background: var(--accent-soft);
+  background: var(--box-bg);
+  border: 1px solid var(--border);
   border-radius: 18px;
   padding: 26px 24px;
   text-align: left;
@@ -244,6 +253,5 @@ a { text-decoration: none; color: inherit; }
 .badge-row { text-align: center; }
 
 @media (max-width: 600px) {
-  .hero h1 { font-size: 2.3rem; }
   .card, .page-card { padding: 32px 22px; }
 }
