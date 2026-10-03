@@ -33,7 +33,8 @@
   </div>
 </section>
 
-  <a href="about.html">
+<div class="cards-container">
+  <a href="about.html" class="card reveal">
     <h2>About Me</h2>
     <p class="teaser">AI student, NGO leader, and yoga instructor — from managing social media to coordinating sustainability initiatives, here's the story behind the work.</p>
   </a>
@@ -45,6 +46,7 @@
     <h2>Contact</h2>
     <p class="teaser">Let's connect! Feel free to reach out!</p>
   </a>
+</div>
 
 <script>
 (function () {
@@ -66,7 +68,7 @@
       if (i < full.length) setTimeout(type, speed);
       else setTimeout(function () { h1.classList.remove('typing'); }, 700);
     })();
-    document.body.classList.add('intro-run'); // fades in the rest right away
+    document.body.classList.add('intro-run');
   }
 
   // Scroll reveals
