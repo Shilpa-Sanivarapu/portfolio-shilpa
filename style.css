@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #C9D5B5;            /* sage green */
+  --bg: #f1ffc8;            /* light lime-sage */
   --card-bg: #ffffff;
   --box-bg: #ffffff;        /* inner boxes: white for now */
   --border: #e4e8dc;
@@ -254,4 +254,9 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 600px) {
   .card, .page-card { padding: 32px 22px; }
+}
+
+/* Force page background (overrides anything else on html/body) */
+html, body {
+  background: #f1ffc8 !important;
 }
