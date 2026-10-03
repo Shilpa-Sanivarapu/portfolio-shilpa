@@ -3,84 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shilpa Sanivarapu</title>
-<link rel="stylesheet" href="style.css?v=3">
-<script>document.documentElement.classList.add('js');</script>
+<title>Shilpa Sanivarapu — One-page demo</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700&family=Dancing+Script:wght@600;700&display=swap');
+:root{--sky:#dff1ff;--blush:#ffe3ee;--accent:#7c5c8c;--accent-dark:#614470;--heading:#3a3437;--text:#5a5256;--card:rgba(255,255,255,.8);--shadow:0 16px 32px -18px rgba(60,50,90,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Nunito',sans-serif;color:var(--text);background:var(--sky);overflow-x:hidden}
+h1,h2,h3{font-family:'Baloo 2',sans-serif;color:var(--heading);font-weight:700}
+a{text-decoration:none;color:inherit}
+
+.bg-glow{position:fixed;inset:0;z-index:-2;background:linear-gradient(120deg,var(--sky),var(--blush),#e8e4ff,var(--sky));background-size:300% 300%;animation:drift 18s ease-in-out infinite}
+@keyframes drift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.waves{position:fixed;left:0;right:0;bottom:0;height:45vh;z-index:-1;overflow:hidden;pointer-events:none}
+.wave{position:absolute;bottom:0;left:0;width:200%;height:100%;animation:slide linear infinite}
+.wave path{fill:currentColor}
+.w1{color:rgba(255,190,215,.45);animation-duration:22s}
+.w2{color:rgba(170,215,255,.45);animation-duration:30s;animation-direction:reverse}
+.w3{color:rgba(205,190,255,.45);animation-duration:40s}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+.site-nav{position:sticky;top:0;z-index:10;display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:14px 24px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(255,255,255,.35)}
+.site-nav a{font-weight:700;font-size:.92rem;color:var(--heading);padding:8px 18px;border-radius:999px;transition:.2s}
+.site-nav a:hover,.site-nav a.active{background:#fff;color:var(--accent)}
+
+section{max-width:900px;margin:0 auto;padding:90px 24px}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;text-align:center;max-width:1100px}
+.hero h1{font-size:clamp(3rem,10vw,7rem);line-height:1;letter-spacing:-.02em;color:var(--accent-dark);margin-bottom:22px;min-height:1em}
+.hero h1.typing::after{content:'';display:inline-block;width:.06em;height:.85em;margin-left:.05em;background:var(--accent-dark);vertical-align:-.05em;animation:blink .7s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+.tagline{font-weight:700;color:var(--heading);font-size:1.1rem;margin-bottom:20px}
+.intro{line-height:1.7;max-width:680px;margin:0 auto 34px;color:var(--heading)}
+body.run .fade{opacity:0;animation:up .8s ease forwards}
+body.run .tagline{animation-delay:.4s}body.run .intro{animation-delay:.6s}body.run .btn-row{animation-delay:.8s}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;font-weight:700;color:#fff;background:var(--accent);padding:13px 30px;border-radius:999px;border:2px solid var(--accent);box-shadow:0 10px 20px -10px rgba(97,68,112,.5);transition:.15s;cursor:pointer;font-family:inherit;font-size:.98rem}
+.btn:hover{transform:translateY(-2px);background:var(--accent-dark)}
+.btn-outline{background:transparent;color:var(--accent-dark);border-color:var(--accent-dark);box-shadow:none}
+.btn-outline:hover{background:var(--accent-dark);color:#fff}
+
+.sec-title{font-size:clamp(2rem,5vw,3rem);color:var(--accent-dark);text-align:center;margin-bottom:34px}
+.panel{background:var(--card);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.9);border-radius:22px;box-shadow:var(--shadow);padding:44px}
+.panel p{line-height:1.8;margin-bottom:18px}.panel p:last-child{margin-bottom:0}
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:24px}
+.chip{background:#fff;color:var(--accent-dark);font-weight:700;font-size:.85rem;padding:7px 16px;border-radius:999px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.item{background:var(--card);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.9);border-radius:20px;box-shadow:var(--shadow);padding:28px 26px;transition:transform .2s}
+.item:hover{transform:translateY(-5px)}
+.item h3{font-size:1.2rem;color:var(--accent-dark);margin-bottom:8px}
+.item p{font-size:.95rem;line-height:1.6}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;color:var(--accent-dark);background:#fff;padding:3px 10px;border-radius:999px;margin-bottom:10px}
+
+.box{background:var(--card);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.95);border-radius:10px;box-shadow:var(--shadow);padding:64px 56px;min-height:340px}
+.box p{line-height:1.9;font-size:1.05rem;margin-bottom:18px}
+.box .chips{justify-content:flex-start}
+.script-title{font-family:'Dancing Script',cursive;font-size:clamp(2.8rem,7vw,4.4rem);font-weight:700;color:var(--accent-dark);margin-bottom:22px;line-height:1}
+#about{max-width:1000px}
+.sec-head{display:flex;align-items:baseline;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:34px}
+.sec-head .sec-title{margin:0}
+.more{font-weight:700;color:var(--accent);border-bottom:2px solid transparent;transition:.15s}
+.more:hover{color:var(--accent-dark);border-color:var(--accent-dark)}
+.more-row{text-align:center;margin-top:34px}
+.contact{text-align:center}
+.contact p{margin-bottom:26px;line-height:1.7}
+footer{text-align:center;padding:30px 24px 150px;font-size:.85rem}
+
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media(max-width:600px){.panel{padding:30px 22px}.box{padding:36px 24px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}}
+</style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-
-<div class="bg-glow" aria-hidden="true"></div>
+<div class="bg-glow"></div>
 <div class="waves" aria-hidden="true">
-  <svg class="wave w1" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,160 C240,60 480,260 720,160 C960,60 1200,260 1440,160 C1680,60 1920,260 2160,160 C2400,60 2640,260 2880,160 L2880,320 L0,320 Z"/></svg>
-  <svg class="wave w2" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,190 C240,280 480,100 720,190 C960,280 1200,100 1440,190 C1680,280 1920,100 2160,190 C2400,280 2640,100 2880,190 L2880,320 L0,320 Z"/></svg>
-  <svg class="wave w3" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,220 C240,150 480,290 720,220 C960,150 1200,290 1440,220 C1680,150 1920,290 2160,220 C2400,150 2640,290 2880,220 L2880,320 L0,320 Z"/></svg>
+<svg class="wave w1" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,160 C240,60 480,260 720,160 C960,60 1200,260 1440,160 C1680,60 1920,260 2160,160 C2400,60 2640,260 2880,160 L2880,320 L0,320 Z"/></svg>
+<svg class="wave w2" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,190 C240,280 480,100 720,190 C960,280 1200,100 1440,190 C1680,280 1920,100 2160,190 C2400,280 2640,100 2880,190 L2880,320 L0,320 Z"/></svg>
+<svg class="wave w3" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,220 C240,150 480,290 720,220 C960,150 1200,290 1440,220 C1680,150 1920,290 2160,220 C2400,150 2640,290 2880,220 L2880,320 L0,320 Z"/></svg>
 </div>
 
 <nav class="site-nav">
-  <a href="index.html" class="active">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
+<a href="#home" class="active">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
 </nav>
 
-<section class="hero">
-  <h1 id="name" aria-label="Shilpa Sanivarapu">Shilpa Sanivarapu</h1>
-  <p class="tagline fade-in">Tech-Driven Creative | AI Enthusiast | Product Marketing Learner</p>
-  <p class="intro fade-in">I'm a B.Tech AI student passionate about blending technology with creativity. I explore how innovation, design, and human emotion connect — whether through marketing, data, or storytelling.</p>
-  <div class="btn-row fade-in">
-    <a href="projects.html" class="btn">View My Work</a>
-    <a href="about.html" class="btn btn-outline">About Me</a>
-  </div>
+<section id="home" class="hero">
+<h1 id="name">Shilpa Sanivarapu</h1>
+<p class="tagline fade">Tech-Driven Creative | AI Enthusiast | Project Management Learner</p>
+<p class="intro fade">I'm a B.Tech AI student passionate about blending technology with creativity. I explore how innovation, design, and human emotion connect - whether through marketing, data, or storytelling.</p>
+<div class="btn-row fade"><a href="#projects" class="btn">View My Work</a><a href="#about" class="btn btn-outline">About Me</a></div>
 </section>
 
-<a href="about.html" class="card reveal">
-  <h2>About Me</h2>
-  <p class="teaser">AI student, NGO leader, and yoga instructor — from managing social media to coordinating sustainability initiatives, here's the story behind the work.</p>
-</a>
-<a href="projects.html" class="card reveal">
-  <h2>Projects</h2>
-  <p class="teaser">AI, NLP, computer vision, and full-stack projects.</p>
-</a>
-<a href="contact.html" class="card reveal">
-  <h2>Contact</h2>
-  <p class="teaser">Let's connect! Feel free to reach out!</p>
-</a>
+<section id="about">
+<div class="box reveal">
+<h2 class="script-title">About me</h2>
+<p>AI student, NGO leader, and yoga instructor. From managing social media to coordinating sustainability initiatives, I like work where technology and people meet.</p>
+<p><strong>Hello, I graduated recently from Mahindra University where I finished my B.Tech in AI. I enjoy learning new things and facing challenges which push me to be better in the field I choose. On the side, I have interests in yoga, art and movies. </strong></p>
+<div class="chips"><span class="chip">AI / ML</span><span class="chip">Project Management</span><span class="chip">NGO Leadership</span><span class="chip">Yoga</span></div>
+</div>
+</section>
+
+<section id="projects">
+<div class="sec-head reveal"><h2 class="sec-title">Projects</h2><a class="more" href="demo-projects.html">Know more →</a></div>
+<div class="grid">
+<div class="item reveal"><span class="tag">NLP</span><h3>Project One</h3><p>Made an Emotion Detection model, which reads the text given and by sentiment analysis, identifies the emotion.</p></div>
+<div class="item reveal"><span class="tag">Computer Vision</span><h3>Project Two</h3><p>Made a simple drowsiness detection model which helps identify if the driver is at risk of falling asleep and alerts them for safety.</p></div>
+<div class="item reveal"><span class="tag">Full-Stack</span><h3>Project Three</h3><p>Made an app, SimpleFlavors, which acts as a bridge between cooks and customers.</p></div>
+</div>
+<div class="more-row reveal"><a class="btn btn-outline" href="demo-projects.html">See all projects</a></div>
+</section>
+
+<section id="contact" class="contact">
+<h2 class="sec-title reveal">Contact</h2>
+<div class="panel reveal">
+<p>Let's connect! Feel free to reach out.</p>
+<div class="btn-row">
+<a class="btn" href="mailto:shilpa@icloud.com">Email Me</a>
+<a class="btn btn-outline" href="www.linkedin.com/in/shilpa-sanivarapu" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn btn-outline" href="https://github.com/Shilpa-Sanivarapu" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div>
+</section>
+
+<footer>© 2026 Shilpa Sanivarapu</footer>
 
 <script>
-(function () {
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var h1 = document.getElementById('name');
-  var full = h1.textContent;
-  var seen = false;
-  try { seen = sessionStorage.getItem('introSeen'); sessionStorage.setItem('introSeen', '1'); } catch (e) {}
-
-  // Typing intro (~1.2s), skipped on repeat visits or reduced motion
-  if (reduce || seen) {
-    document.body.classList.add('intro-done');
-  } else {
-    h1.textContent = '';
-    h1.classList.add('typing');
-    var i = 0, speed = 70;
-    (function type() {
-      h1.textContent = full.slice(0, ++i);
-      if (i < full.length) setTimeout(type, speed);
-      else setTimeout(function () { h1.classList.remove('typing'); }, 700);
-    })();
-    document.body.classList.add('intro-run');
-  }
-
-  // Scroll reveals
-  var items = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window) || reduce) {
-    items.forEach(function (el) { el.classList.add('in'); });
-    return;
-  }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.2 });
-  items.forEach(function (el) { io.observe(el); });
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var h1=document.getElementById('name'),full=h1.textContent;
+if(!reduce){
+ h1.textContent='';h1.classList.add('typing');document.body.classList.add('run');
+ var i=0;(function t(){h1.textContent=full.slice(0,++i);if(i<full.length)setTimeout(t,70);else setTimeout(function(){h1.classList.remove('typing')},700)})();
+}
+var items=document.querySelectorAll('.reveal');
+if(!('IntersectionObserver' in window)||reduce){items.forEach(function(e){e.classList.add('in')})}
+else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});items.forEach(function(e){io.observe(e)})}
+// highlight nav link for the section in view
+var links=document.querySelectorAll('.site-nav a'),secs=document.querySelectorAll('section');
+if('IntersectionObserver' in window){
+ var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+ secs.forEach(function(s){so.observe(s)});
+}
 })();
 </script>
 </body>
