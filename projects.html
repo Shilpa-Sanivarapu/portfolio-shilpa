@@ -4,79 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects | Shilpa Sanivarapu</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=6">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+<div class="bg-glow"></div>
+<div class="waves" aria-hidden="true">
+<svg class="wave w1" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,160 C240,60 480,260 720,160 C960,60 1200,260 1440,160 C1680,60 1920,260 2160,160 C2400,60 2640,260 2880,160 L2880,320 L0,320 Z"/></svg>
+<svg class="wave w2" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,190 C240,280 480,100 720,190 C960,280 1200,100 1440,190 C1680,280 1920,100 2160,190 C2400,280 2640,100 2880,190 L2880,320 L0,320 Z"/></svg>
+<svg class="wave w3" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,220 C240,150 480,290 720,220 C960,150 1200,290 1440,220 C1680,150 1920,290 2160,220 C2400,150 2640,290 2880,220 L2880,320 L0,320 Z"/></svg>
+</div>
 
 <nav class="site-nav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
+  <a href="index.html#home">Home</a>
+  <a href="index.html#about">About</a>
   <a href="projects.html" class="active">Projects</a>
-  <a href="contact.html">Contact</a>
+  <a href="index.html#contact">Contact</a>
 </nav>
 
-<div class="page-wrap">
-  <div class="page-card">
-    <h1>Projects</h1>
-    <p style="text-align:center; margin-bottom: 8px;">AI, machine learning, image processing, and full-stack projects I've built along the way</p>
-
-    <div class="grid">
-
-      <div class="grid-item">
-        <span class="tag">ML / NLP</span>
-        <h3>Emotion Detection &amp; Sentiment Analysis</h3>
-        <p>An NLP model that classifies emotional sentiment from unstructured text — exploring feature extraction and classification techniques for more human-like AI interactions.</p>
-      </div>
-
-      <div class="grid-item">
-        <span class="tag">DIP</span>
-        <h3>Skin Disease Detection</h3>
-        <p>A digital image processing model that analyzes skin images to detect and classify common skin conditions, aimed at supporting early, accessible screening.</p>
-      </div>
-
-      <div class="grid-item">
-        <span class="tag">DIP</span>
-        <h3>Drug Detection</h3>
-        <p>An image processing pipeline built to identify and classify drugs from image data, applying preprocessing and feature extraction techniques for accurate detection.</p>
-      </div>
-
-      <div class="grid-item">
-        <span class="tag">ML</span>
-        <h3>Drug Compatibility Ranking</h3>
-        <p>Given a drug, this model returns the top 50 alternatives ranked by chemical compound compatibility, cross-checked against drugs available in the Indian market.</p>
-      </div>
-
-      <div class="grid-item">
-        <span class="tag">OOPs</span>
-        <h3>Movie Streaming Platform</h3>
-        <p>An object-oriented movie streaming platform built to practice core OOPs principles — covering user accounts, browsing, and content management.</p>
-      </div>
-
-      <div class="grid-item">
-        <span class="tag">Full-Stack</span>
-        <h3>Home Bites (SimpleFlavors)</h3>
-        <p>A Flutter app letting users browse, filter by cuisine, and book personal cooks — with a Node.js/Express backend and MongoDB database handling scheduling and live bookings.</p>
-      </div>
-
-      <div class="grid-item">
-        <span class="tag">Full-Stack</span>
-        <h3>Food Waste Reducer</h3>
-        <p>An app that scans your fridge, identifies what's inside, and suggests recipes based on the ingredients you already have. It tracks weekly wastage insights to build better habits over time, with a planned extension to route surplus food to NGOs.</p>
-      </div>
-
-      <div class="grid-item">
-        <span class="tag">ML</span>
-        <h3>Epilepsy Detection</h3>
-        <p>Investigating machine learning methods to predict epileptic seizures — preprocessing EEG data and testing algorithms for early-warning systems.</p>
-      </div>
-
-    </div>
-
-    <div class="back-link-row">
-      <a href="index.html" class="back-link">← Back to Home</a>
-    </div>
+<div class="page">
+  <h1 class="sec-title">Projects</h1>
+  <p class="lead">AI, machine learning, image processing, and full-stack projects I've built along the way.</p>
+  <div class="big">
+    <div class="proj reveal"><span class="tag">ML / NLP</span><h3>Emotion Detection &amp; Sentiment Analysis</h3><p>An NLP model that classifies emotional sentiment from unstructured text — exploring feature extraction and classification techniques for more human-like AI interactions.</p></div>
+    <div class="proj reveal"><span class="tag">Computer Vision</span><h3>Real Time Drowsiness Detection</h3><p>A simple drowsiness detection model which helps identify if the driver is at risk of falling asleep and alerts them for safety.</p></div>
+    <div class="proj reveal"><span class="tag">DIP</span><h3>Skin Disease Detection</h3><p>A digital image processing model that analyzes skin images to detect and classify common skin conditions, aimed at supporting early, accessible screening.</p></div>
+    <div class="proj reveal"><span class="tag">DIP</span><h3>Drug Detection</h3><p>An image processing pipeline built to identify and classify drugs from image data, applying preprocessing and feature extraction techniques for accurate detection.</p></div>
+    <div class="proj reveal"><span class="tag">ML</span><h3>Drug Compatibility Ranking</h3><p>Given a drug, this model returns the top 50 alternatives ranked by chemical compound compatibility, cross-checked against drugs available in the Indian market.</p></div>
+    <div class="proj reveal"><span class="tag">OOPs</span><h3>Movie Streaming Platform</h3><p>An object-oriented movie streaming platform built to practice core OOPs principles — covering user accounts, browsing, and content management.</p></div>
+    <div class="proj reveal"><span class="tag">Full-Stack</span><h3>Home Bites (SimpleFlavors)</h3><p>A Flutter app letting users browse, filter by cuisine, and book personal cooks — with a Node.js/Express backend and MongoDB database handling scheduling and live bookings.</p></div>
+    <div class="proj reveal"><span class="tag">Full-Stack</span><h3>Food Waste Reducer</h3><p>An app that scans your fridge, identifies what's inside, and suggests recipes based on the ingredients you already have. It tracks weekly wastage insights to build better habits over time, with a planned extension to route surplus food to NGOs.</p></div>
+    <div class="proj reveal"><span class="tag">ML</span><h3>Epilepsy Detection</h3><p>Investigating machine learning methods to predict epileptic seizures — preprocessing EEG data and testing algorithms for early-warning systems.</p></div>
   </div>
 </div>
 
+<div class="back"><a class="btn btn-outline" href="index.html#projects">← Back to home</a></div>
+<script src="script.js?v=6"></script>
 </body>
 </html>
